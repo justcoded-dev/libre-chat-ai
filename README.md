@@ -46,6 +46,66 @@
   </a>
 </p>
 
+# 🛠️ Quick Setup
+
+## Prepare the application
+
+1. Clone this repository
+
+```bash
+git clone git@github.com:justcoded-dev/libre-chat-ai.git
+```
+
+2. Create the `.env` file
+
+```bash
+cp .env.example .env
+```
+
+3. Fill in the OpenAI API Key in the `.env` file
+
+```dotenv
+OPENAI_API_KEY=sk-proj-ykr7YWHzf4kdQs...
+RAG_OPENAI_API_KEY=sk-proj-ykr7YWHzf4kdQs...
+```
+
+4. Ensure the docker user has all the required permissions in the filesystem, uncomment `UID` and `GID` if applicable
+
+```dotenv
+UID=1000
+GID=1000
+```
+5. Tweak the APP port and domains if required
+
+```dotenv
+PORT=3080
+DOMAIN_CLIENT=http://localhost:3080
+DOMAIN_SERVER=http://localhost:3080
+```
+
+Leave everything else as it is, you're good to go.
+
+## Run the application
+
+To run the application, simply execute the docker compose pipeline:
+
+```bash
+docker compose up -d --build
+```
+
+## Deep customization
+
+Publish the `librechat.yaml` config:
+
+```bash
+cp librechat.example.yaml librechat.yaml
+```
+
+And edit everything you like there.
+
+More details available [by this link](https://www.librechat.ai/docs/configuration/librechat_yaml).
+
+---
 
 # ✨ Features
 
